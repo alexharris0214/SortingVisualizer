@@ -5,6 +5,7 @@ pygame.init()
 HEIGHT = 600
 WIDTH = 800
 GREEN = 144, 230, 92
+YELLOW = 240, 230, 50
 RED = 235, 64, 40
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -29,8 +30,8 @@ def draw_list(list,num_blocks, red, green, algo):
     window.fill((0,0,0))
 
     title = pygame.font.SysFont('Ariel', 40).render(f"Current Sort: {algo}", 200, GREEN)
-    insert = pygame.font.SysFont('Ariel', 40).render("Insertion Sort - 'I'", 200, GREEN)
-    select = pygame.font.SysFont('Ariel', 40).render("Selection Sort - 'S'", 200, GREEN)
+    insert = pygame.font.SysFont('Ariel', 40).render("Insertion Sort - 'i'", 200, GREEN)
+    select = pygame.font.SysFont('Ariel', 40).render("Selection Sort - 's'", 200, GREEN)
     start = pygame.font.SysFont('Ariel', 40).render("Start Sorting - Space", 200, GREEN)
     reset = pygame.font.SysFont('Ariel', 40).render("Reset List - 'r''", 200, GREEN)
 
@@ -77,10 +78,10 @@ def selectionSort(list, num_elements):
     for i in range(len(list.lst)):
         # Find the minimum element in remaining 
         # unsorted array
-        clock.tick(10)
+        clock.tick(20)
         min_idx = i
         for j in range(i+1, len(list.lst)):
-            clock.tick(10)
+            clock.tick(20)
             draw_list(list, num_elements, i, j, "Selection Sort")
             if list.lst[min_idx] > list.lst[j]:
                 min_idx = j
